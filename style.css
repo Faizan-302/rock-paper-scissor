@@ -1,0 +1,419 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@600;700&display=swap');
+
+* {
+    font-family: 'Barlow Semi Condensed', sans-serif;
+    font-size: 600;
+}
+
+body {
+    height: 100vh;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    position: relative;
+}
+
+.container {
+    height: 100%;
+    width: 100%;
+    background-image: linear-gradient(to right, hsl(214, 47%, 23%), hsl(237, 49%, 15%));
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    align-items: center;
+    opacity: 1;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px;
+    height: 80px;
+    width: 40%;
+    border: 2px solid rgb(149, 144, 144);
+    border-radius: 10px;
+    padding: 15px 20px;
+}
+
+.main-heading {
+    font-size: 1.2rem;
+    line-height: 0.8;
+    max-width: min-content;
+    color: white;
+    margin: 0;
+}
+
+.score-container {
+    max-height: 80%;
+    width: 80px;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 7px;
+    padding: 10px 10px;
+
+}
+
+.score-container p {
+    margin: 0px;
+}
+
+.score-container p:first-child {
+    font-size: 14px;
+    /* margin-top: 20px; */
+}
+
+#scorePoints {
+    font-size: 2.5rem;
+    font-weight: 800;
+}
+
+.container2 {
+    position: relative;
+    /* border: 1px solid white; */
+    min-width: 50%;
+    min-height: 320px;
+    display: flex;
+}
+
+.symbols {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 70px;
+    width: 70px;
+    background-color: white;
+    border-radius: 100px;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.symbols img {
+    font-size: 10px;
+}
+
+/* Scissors Gradient: hsl(39, 89%, 49%) to hsl(40, 84%, 53%)
+- Paper Gradient: hsl(230, 89%, 62%) to hsl(230, 89%, 65%)
+- Rock Gradient: hsl(349, 71%, 52%) to hsl(349, 70%, 56%)
+- Lizard Gradient: hsl(261, 73%, 60%) to hsl(261, 72%, 63%)
+- Cyan: hsl(189, 59%, 53%) to hsl(189, 58%, 57%) */
+
+#symbol1 {
+    background-image: url('images/icon-scissors.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 35px;
+    border: 15px solid hsl(39, 89%, 49%);
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.circle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    content: "";
+    width: 170px;
+    height: 170px;
+    border-radius: 50%;
+    border: 10px solid black;
+    opacity: 0.2;
+
+    transform: translate(-50%, -50%);
+}
+
+#symbol2 {
+    background-image: url('images/icon-spock.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 35px;
+    border: 15px solid hsl(189, 59%, 53%);
+    position: absolute;
+    top: 90px;
+    left: 20%;
+}
+
+#symbol3 {
+    background-image: url('images/icon-paper.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 35px;
+    border: 15px solid hsl(230, 89%, 62%);
+    position: absolute;
+    top: 90px;
+    right: 20%;
+}
+
+#symbol4 {
+    background-image: url('images/icon-lizard.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 35px;
+    border: 15px solid hsl(261, 73%, 60%);
+    position: absolute;
+    top: 210px;
+    left: 28%;
+
+}
+
+#symbol5 {
+    background-image: url('images/icon-rock.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 35px;
+    border: 15px solid hsl(349, 71%, 52%);
+    position: absolute;
+    top: 210px;
+    right: 28%;
+}
+
+#rule-button {
+    border: 1px solid white;
+    color: white;
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    padding: 5px 20px;
+    font-size: 14px;
+
+}
+
+#rule-button p {
+    margin: 0;
+    font-weight: 400;
+    cursor: pointer;
+}
+
+.container3 {
+    min-width: 50%;
+    max-width: 50%;
+    min-height: 320px;
+    /* border: 1px solid white; */
+    display: none;
+    flex-direction: row;
+    justify-content: center;
+    /* padding: 0 160px; */
+    font-weight: 600;
+    align-items: flex-start;
+}
+
+.picked-symbol {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 150px;
+    width: 150px;
+    background-color: white;
+    border-radius: 50%;
+    overflow: hidden;
+    background-image: url('images/icon-scissors.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 70px;
+    border: 25px solid hsl(39, 89%, 49%);
+}
+
+.user-picked {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-right: 20px;
+}
+
+.computer-picked {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-left: 20px;
+}
+
+h3 {
+    color: white;
+    margin-bottom: 30px;
+}
+
+.middle {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#result {
+    display: flex;
+    color: white;
+    font-size: 30px;
+    margin-top: 120px;
+}
+
+#playAgain {
+    min-width: 120px;
+    padding: 10px 20px;
+    border-radius: 10px;
+    margin-top: 5px;
+    cursor: pointer;
+}
+
+#rule-image {
+    position: absolute;
+    top: 15%;
+    left: 50%;
+    align-items: center;
+    transform: translateX(-50%);
+    background-color: white;
+    padding: 10px 25px 20px 25px;
+    border-radius: 6px;
+    display: none;
+}
+
+#rule-image div {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#rule-image img {
+    height: 250px;
+}
+
+#rule-image div h2 {
+    color: black;
+    margin-bottom: 0;
+}
+
+#close-button {
+    margin-bottom: 0;
+    font-size: 20px;
+    color: rgb(149, 144, 144);
+    cursor: pointer;
+}
+
+@media screen and (max-width : 375px) {
+    header {
+        display: flex;
+        justify-content: space-between;
+        margin: 20px;
+        height: 80px;
+        width: 80%;
+        border: 2px solid rgb(149, 144, 144);
+        border-radius: 10px;
+        padding: 15px 20px;
+    }
+
+    .circle {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        content: "";
+        width: 170px;
+        height: 170px;
+        border-radius: 50%;
+        border: 10px solid black;
+        opacity: 0.2;
+        transform: translate(-50%, -50%);
+    }
+
+    #symbol1 {
+        background-image: url('images/icon-scissors.svg');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 35px;
+        border: 15px solid hsl(39, 89%, 49%);
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+
+    #symbol2 {
+        background-image: url('images/icon-spock.svg');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 35px;
+        border: 15px solid hsl(189, 59%, 53%);
+        position: absolute;
+        top: 90px;
+        left: -30%;
+    }
+
+    #symbol3 {
+        background-image: url('images/icon-paper.svg');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 35px;
+        border: 15px solid hsl(230, 89%, 62%);
+        position: absolute;
+        top: 90px;
+        right: -30%;
+    }
+
+    #symbol4 {
+        background-image: url('images/icon-lizard.svg');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 35px;
+        border: 15px solid hsl(261, 73%, 60%);
+        position: absolute;
+        top: 210px;
+        left: -15%;
+
+    }
+
+    #symbol5 {
+        background-image: url('images/icon-rock.svg');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 35px;
+        border: 15px solid hsl(349, 71%, 52%);
+        position: absolute;
+        top: 210px;
+        right: -15%;
+    }
+
+    #rule-button {
+        border: 1px solid white;
+        color: white;
+        position: absolute;
+        padding: 5px 20px;
+        font-size: 18px;
+        bottom: 140px;
+        right: 37%;
+        margin-top: 80px;
+        border-radius: 5px;
+
+    }
+
+    .middle {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        /* align-items:; */
+        margin-top: 200px;
+        position: absolute;
+    }
+
+    .picked-symbol {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100px;
+        width: 100px;
+        background-color: white;
+        border-radius: 50%;
+        overflow: hidden;
+        background-image: url('images/icon-scissors.svg');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 60px;
+        border: 25px solid hsl(39, 89%, 49%);
+    }
+
+}

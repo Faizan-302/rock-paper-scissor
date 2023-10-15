@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="style.css">
+  <title>Frontend Mentor | Rock, Paper, Scissors</title>
+  <div class="container">
+    <header>
+      <h1 class="main-heading">
+        ROCK PAPER SCISSORS LIZARD SPOCK
+      </h1>
+      <div class="score-container">
+        <p>SCORE</p>
+        <p id="scorePoints">12</p>
+      </div>
+    </header>
+
+    <div class="container2">
+      <div class="circle"></div>
+      <div class="symbols" id="symbol1">
+      </div>
+      <div class="symbols" id="symbol2">
+      </div>
+      <div class="symbols" id="symbol3">
+      </div>
+      <div class="symbols" id="symbol4">
+      </div>
+      <div class="symbols" id="symbol5">
+      </div>
+    </div>
+    <div id="rule-button">
+      <p id="rules">RULES</p>
+    </div>
+    <div class="container3">
+      <div class="user-picked">
+        <h3>YOU PICKED</h3>
+        <div class="picked-symbol" id="user-symbol">
+        </div>
+      </div>
+      <div class="middle">
+        <div id="result">faizan</div>
+        <button id="playAgain">PLAY AGAIN</button>
+      </div>
+      <div class="computer-picked">
+        <h3>THE HOUSE PICKED</h3>
+        <div class="picked-symbol" id="computer-symbol">
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="rule-image">
+    <div>
+      <h2>RULES</h2>
+      <p id="close-button">X</p>
+    </div>
+    <img src="images/image-rules-bonus.svg" alt="sccc">
+  </div>
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution {
+      font-size: 11px;
+      text-align: center;
+      display: none;
+    }
+
+    .attribution a {
+      color: hsl(228, 45%, 44%);
+    }
+  </style>
+</head>
+
+<body>
+
+
+
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+    Coded by <a href="#">Your Name Here</a>.
+  </div>
+</body>
+<script src="index.js"></script>
+
+</html>
